@@ -104,19 +104,22 @@ public class WriteLoops {
 
     public int helloZipCode() {
         int w = 0;
-
+        for(int i = 5; i <= 105; i++) {
+            if (i > 51) {
+            System.out.println("Hello Zipcode");
+            } else {
         // Write a FOR loop that counts from 5 to 105. Put an IF
         // statement inside the loop that checks the
         // loop index counter and if it’s greater than 51,
         // prints “Hello Zipcode” instead of the statement w = w + 1;
-
                 // calling
                 w = w + 1;
+            }
             // each time through the inner loop
         
         return w;
     }
-
+}
     public void simpleLoops() {
         int i = 0;
 
@@ -140,11 +143,15 @@ public class WriteLoops {
     // After the loop is done, print “Honey, I’m Home!”
     public int driveHome() {
         int w = 0;
-
+            while ("gpsCurrentLocation".equals("Home")) {
+            driveSomeMore();
+            System.out.println("Honey, I'm Home!");
+             w = w + 1;
+            }
         // you need to use a .equals for two Strings.
 
             // calling
-            w = w + 1;
+            //w = w + 1;
             // each time through the inner loop
         
 
@@ -164,7 +171,8 @@ public class WriteLoops {
         int runningScore = 0;
 
         // do your while loop here
- 
+    while (runningScore < highestScore)
+        System.out.println(currentScore + runningScore);
             // calling
             w = w + 1;
             // each time through the inner loop
@@ -181,23 +189,31 @@ public class WriteLoops {
         int runningScore = 0;
 
         // do your while loop here
-
-            // calling
+        do {
+            System.out.println(currentScore + runningScore);
             w = w + 1;
-            // each time through the inner loop
-
-        return w >= 3;
+        } while (runningScore < highestScore);
+        
+            return w >= 3; 
+             
+        // what's the primary difference between them?!?
     }
-
+            // calling
+            // each time through the inner loop
+    
     // Write a WHILE loop that checks “serverIsRunning()” and if true
     // calls “waitFor(5)” After the loop, write an IF and check “serverIsRunning()”
     // is false, and if so, call “sendEmergencyText(“Help!”, adminPhoneNumber)”
     // and also calls “tryServerRestart()”
     public int checkServerStatus() {
         int w = 0;
+        boolean serverStatus;
         String adminPhoneNumber = "+1 202 456 1111";
-        
-
+        while(serverStatus = true) {
+            waitFor(5);
+        }  if (serverStatus = false){
+            sendEmergencyText("Help!", adminPhoneNumber);
+        }
         // calling
         w = w + 1;
         // each time through the inner loop
@@ -210,6 +226,9 @@ public class WriteLoops {
     // and if it is, add 7 to “i”
     public int loop50by7() {
         int w = 0;
+        int i = 7;
+        while( i < 50) {
+            i = i + 7; 
 
 
             // calling
