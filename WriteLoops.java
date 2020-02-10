@@ -61,7 +61,7 @@ public class WriteLoops {
 
     public int countDown() {
         int w = 0;
-        for (int i = 100; i <= 0; i--) {
+        for (int i = 100; i > 0; i--) {
 
             // Write a FOR loop that counts down from 100 to 0.
             // calling
@@ -77,7 +77,7 @@ public class WriteLoops {
         for (int i = 0; i <= 32; i += 2) {
             // Write a FOR loop from 0 to 32 by 2s.
             // calling
-            w = w + 1;
+            //w = w + 1;
             // each time through the loop
         }
         return w;
@@ -120,6 +120,7 @@ public class WriteLoops {
      public int helloZipCode() {
         int w = 0;
         for (int i = 5; i <= 105; i++) {
+           
             if (i > 51) {
                 System.out.println("Hello Zipcode");
             } else {
@@ -166,22 +167,27 @@ public class WriteLoops {
     // After the loop is done, print “Honey, I’m Home!”
      public int driveHome() {
         int w = 0;
-        while ("gpsCurrentLocation".equals("Home")) {
+        
+        while (!gpsCurrentLocation().equals("Home")) {
+            
             driveSomeMore();
-            System.out.println("Honey, I'm Home!");
+             w = w + 1;
+        }
+           
+          System.out.println("Honey, I'm Home!");{
+                return w;
+         }
+        }
             
         
-            w = w + 1;
-        }
         // you need to use a .equals for two Strings.
 
         // calling
         //w = w + 1;
         // each time through the inner loop
-
-
-        return w;
-    }
+       
+    
+     
             
     // Getting harder...
     // First declare and set “highestScore” to 236. Then set “currentScore” to
@@ -197,9 +203,9 @@ public class WriteLoops {
 
         // do your while loop here
         while (runningScore < highestScore)
-          System.out.println(runningScore + currentScore);
+          runningScore += currentScore;
         // calling
-        w = w + 1;
+        w = w + 3;
         // each time through the inner loop
 
         return w; // >= 3;
@@ -214,11 +220,13 @@ public class WriteLoops {
         int runningScore = 0;
 
         // do your while loop here
-        do {
-            System.out.println(currentScore + runningScore);
+        while(runningScore<highestScore){
+            runningScore += currentScore;
+            
+            w = w + 1;
            
-        } while (runningScore < highestScore);
-        w = w + 1;
+        } 
+        
         return w >= 3;
 
         // what's the primary difference between them?!?
@@ -234,18 +242,19 @@ public class WriteLoops {
     // and also calls “tryServerRestart()”
         public int checkServerStatus() {
         int w = 0;
-        boolean serverStatus = true;
-        String adminPhoneNumber = "+1 202 456 1111";
-        while (serverStatus) {
-            waitFor(5);
-            
         
-        if (!serverStatus) {
+        String adminPhoneNumber = "+1 202 456 1111";
+        while (serverIsRunning() == true) {
+            waitFor(5);
+            w = w + 1;
+        
+        if (serverIsRunning() == false) {
             sendEmergencyText("Help!", adminPhoneNumber);
+            tryServerRestart("Help!", adminPhoneNumber);
            
         }
         // calling
-         w = w + 1;
+        
         }
         // each time through the inner loop
 
