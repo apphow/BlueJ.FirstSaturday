@@ -1,5 +1,6 @@
-import com.sun.org.apache.xpath.internal.SourceTree;
 
+
+import com.sun.org.apache.xpath.internal.SourceTree;
 import java.awt.SystemTray;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Supplier;
@@ -157,7 +158,6 @@ public class WriteLoops {
 
             return w;
     }
-
     // Getting harder...
     // First declare and set “highestScore” to 236. Then set “currentScore” to
     // “gameNextScore()”. Then write a WHILE loop that checks "runningScore"
@@ -229,17 +229,13 @@ public class WriteLoops {
         int i = 7;
         while( i < 50) {
             i = i + 7; 
-
-
             // calling
             w = w + 1;
             // each time through the inner loop
-        
+        }
         return w;
     }
-
     int[] threes_array = { 3, 6, 9, 12, 15, 18, 21 };
-
     // Foo is method that add the first 7 factors of three together and prints
     // out the sum of them all.
     public int foo() {
@@ -266,12 +262,13 @@ public class WriteLoops {
     public int rewriteFooAsFor() {
         int w = 0;
         int sumOfThrees = 0;
-
- 
+        for (int i : threes_array) {
+        sumOfThrees = sumOfThrees + threes_array[i];
+    
             // calling
             w = w + 1;
             // each time through the inner loop
-        
+        }
         System.out.print("The Sum is ");
         System.out.println(sumOfThrees);
 
@@ -283,7 +280,9 @@ public class WriteLoops {
     public int rewriteFooAsWhile() {
         int w = 0;
         int sumOfThrees = 0;
-
+        for (int i : threes_array) {
+        sumOfThrees = sumOfThrees + threes_array[1];
+        }
  
             // calling
             w = w + 1;
@@ -305,6 +304,16 @@ public class WriteLoops {
     public int manageYardAndJunior() {
         int w = 0;
         boolean onTime = true;
+        boolean yardNeedsMowed = true;
+        boolean summer = true;
+        
+        while (summer){
+            if (yardNeedsMowed){
+            yellAtJuniorToMowLawn();
+            }
+            String sendJuniorBackToSchool;
+            
+        }
 
         // ADD YOUR CODE here.
  
@@ -323,8 +332,9 @@ public class WriteLoops {
     public int tallyVote1() {
         int w = 0;
         int numberOfVotes = voteTallies.length;
-
- 
+        for (int i = 0; i <= numberOfVotes; i++) {
+        System.out.println(i);
+        }
             // calling
             w = w + 1;
             // each time through the inner loop
@@ -338,8 +348,12 @@ public class WriteLoops {
     public int tallyVote2() {
         int w = 0;
         int numberOfVotes = voteTallies.length;
-
-
+        int idx = 0;
+        
+        for (int i = 0; i < numberOfVotes; i++) {
+             System.out.println(numberOfVotes);
+            }
+    
             // calling
             w = w + 1;
             // each time through the inner loop
